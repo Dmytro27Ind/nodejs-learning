@@ -22,21 +22,18 @@ const server = http.createServer((req, res) => {
 
     switch(path){
         case '':
-            serverStaticFile(res, './public/home.html', 'text/html')
+            serverStaticFile(res, '/public/home.html', 'text/html')
             break
         case '/about':
-            serverStaticFile(res, './public/about.html', 'text/html')
+            serverStaticFile(res, '/public/about.html', 'text/html')
             break
-        case '/img/logo.png':
-            serverStaticFile(res, './public/img/node_logo.png', 'image/png')
+        case '/img/node_logo.png':
+            serverStaticFile(res, '/public/img/node_logo.png', 'image/png')
             break
         default:
-            serverStaticFile(res, './public/404.html', 'text/html')
+            serverStaticFile(res, '/public/404.html', 'text/html')
             break
     }
-
-    // res.writeHead(200, { 'Content-Type': 'text/plain' })
-    // res.end('Hello World!')
 })
 
 server.listen(port, () => console.log(`Server started on port ${port}; ` + `\nPress Ctrl+C for ended...`))
