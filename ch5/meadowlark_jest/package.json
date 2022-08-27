@@ -5,7 +5,10 @@
   "main": "meadowlark.js",
   "scripts": {
     "test": "jest",
-    "testwatch": "jest --watch"
+    "testwatch": "jest --watch",
+    "testwatch2": "npm test -- --watch",
+    "coverage": "jest  --coverage",
+    "coverage2": "npm test -- --coverage"
   },
   "keywords": [
     "nodejs",
