@@ -25,7 +25,11 @@ app.use(handlers.notFound)
 // Пользовательская страница 500
 app.use(handlers.serverError)
 
-app.listen(port, () => console.log(
-    `Express web server started on http://localhost:${port}\n` +
-    `Press Ctrl+C for exit...`
-))
+if(require.main === module){
+    app.listen(port, () => console.log(
+        `Express web server started on http://localhost:${port}\n` +
+        `Press Ctrl+C for exit...`
+    ))
+} else {
+    module.exports = app
+}
