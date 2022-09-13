@@ -19,6 +19,14 @@ app.get('/', handlers.home)
 
 app.get('/about', handlers.about)
 
+// to get request headers
+app.get('/headers', (req, res) => {
+    res.type('text/plain')
+    const headers = Object.entries(req.headers)
+        .map(([key, value]) => `${key}: ${value}`)
+    res.send(headers.join('\n'))
+})
+
 // Пользовательская страница 404
 app.use(handlers.notFound)
 
