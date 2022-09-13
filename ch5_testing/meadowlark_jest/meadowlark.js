@@ -5,6 +5,9 @@ const handlers = require('./lib/handlers')
 const app = express()
 const port = process.env.PORT || 3000
 
+// to disable x-powered-by header for request from hackers
+app.disable('x-powered-by')
+
 // Настройка механизма представлений Handlebars.
 app.engine('handlebars', engine({
     defaultLayout: 'main',
