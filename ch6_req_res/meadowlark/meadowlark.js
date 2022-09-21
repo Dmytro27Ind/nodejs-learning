@@ -41,11 +41,12 @@ app.get('/about', handlers.about)
 //* Передача контекста представлению, включая строку запроса, cookies
 //* и значения сеансовых переменных
 app.get('/greeting', (req, res) => {
+    console.log(req.session)
     res.render('greeting', {
         message: 'Hello, man',
         style: req.query.style,
-        userid: req.cookies.userid,
-        username: req.session.username
+        // userid: req.cookies.userid,  //* if you use cookies
+        // username: req.session.username  //* if you use session middleware
     })
 })
 
